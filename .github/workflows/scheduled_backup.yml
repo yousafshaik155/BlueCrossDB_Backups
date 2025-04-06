@@ -31,6 +31,8 @@ jobs:
         export AWS_DEFAULT_REGION=ap-south-1
 
     - name: Create RDS Snapshot
+      env:
+        AWS_DEFAULT_REGION: ap-south-1
       run: |
         INSTANCE_ID="bluecross-db"
         SNAPSHOT_ID="${INSTANCE_ID}-snapshot-$(date +%Y%m%d%H%M%S)"
